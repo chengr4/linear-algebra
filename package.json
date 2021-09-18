@@ -1,0 +1,9 @@
+{
+  "name": "linear-algebra",
+  "version": "1.0.0",
+  "description": "Linear Algebra Note",
+  "main": "index.js",
+  "repository": "https://github.com/chengr4/linear-algebra.git",
+  "author": "Eddie Cheng <fcheng@th-wildau.de>",
+  "license": "MIT"
+}
