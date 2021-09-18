@@ -15,6 +15,30 @@ function addVector(...vectors: number[][]) {
     return preVector.map((value, index) => value + currentVector[index]);
   });
   console.log('sum', sum);
+
+  return sum;
 }
 
 addVector(v1, v2, v3 , v4);
+
+const scalar = 2;
+
+function scalarMultiplication(vector: number[], scalar: number) {
+console.log('vector: ', vector);
+
+
+  const result = vector.map(value => value * scalar);
+  console.log("Multiplicated vector ",result);
+
+  return result;
+}
+
+scalarMultiplication(v1, scalar)
+
+class Vector {
+  value: number[];
+
+  constructor() {
+    this.value = [...new Array(2)].map(() => Math.floor(Math.random()*10));
+  }
+}

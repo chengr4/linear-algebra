@@ -2,6 +2,11 @@
 
 線性代數筆記
 
+## For nexxt time
+
+1. 影片從 4:55 開始（1B講堂）
+2. 完成 `class Vector`
+
 ## Contents
 
 + Introduction to Vectors
