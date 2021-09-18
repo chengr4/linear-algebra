@@ -1,4 +1,8 @@
 # Introduction to Vectors
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\vec{v}=&space;\begin{bmatrix}&space;v1&space;\\&space;v2&space;\end{bmatrix}" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;\vec{v}=&space;\begin{bmatrix}&space;v1&space;\\&space;v2&space;\end{bmatrix}" title="\vec{v}= \begin{bmatrix} v1 \\ v2 \end{bmatrix}" /></a>
 
+
+## 重要概念
+
+- Row picture: different three planes (換值整體包刮核心大改)
+- Col picture: The same three col vectors (換值核心不變)
