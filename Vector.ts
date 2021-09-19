@@ -1,15 +1,16 @@
 export default class Vector {
-  private v: number[];
+  private v: number[] | number[][];
 
-  constructor(value?: number) {
-    this.v = [...new Array(value)].map(() => Math.floor(Math.random() * 10));
+  constructor(value?: number | number[]| number[][]) {
+    if(typeof value === 'number') this.v = [...new Array(value)].map(() => Math.floor(Math.random() * 10));
+    if(Array.isArray(value)) this.v = value;
   }
 
   get value() {
     return this.v;
   }
 
-  set value(newValue: number[]) {
+  set value(newValue: number[] | number[][]) {
     this.v = newValue;
   }
 
