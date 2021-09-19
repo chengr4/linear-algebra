@@ -33,12 +33,4 @@ console.log('vector: ', vector);
   return result;
 }
 
-scalarMultiplication(v1, scalar)
-
-class Vector {
-  value: number[];
-
-  constructor() {
-    this.value = [...new Array(2)].map(() => Math.floor(Math.random()*10));
-  }
-}
+scalarMultiplication(v1, scalar);
