@@ -35,4 +35,3 @@
 
 1. [【10120趙啟超教授：線性代數】](https://www.youtube.com/playlist?list=PLS0SUwlYe8cwxscGGxCUqQ78_AMJHQJ5u)
 2. [linear-algebra](https://github.com/guokaide/linear-algebra)
-
