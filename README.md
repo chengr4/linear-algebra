@@ -2,10 +2,16 @@
 
 線性代數筆記
 
-## For nexxt time
+Run:
 
-1. 影片從 4:55 開始（1B講堂）
-2. 完成 `class Vector`
+```
+ts-node <file>
+```
+
+## Next Topic
+
+1. 1B 7:00
+2. Dimensional array
 
 ## Contents
 
