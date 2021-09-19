@@ -1,7 +1,11 @@
-export default class Vector {
-  private v: number[] | number[][];
+/**
+ * I think use array is enough stop using this class
+ */
 
-  constructor(value?: number | number[]| number[][]) {
+export default class Vector {
+  private v: number[];
+
+  constructor(value?: number | number[]) {
     if(typeof value === 'number') this.v = [...new Array(value)].map(() => Math.floor(Math.random() * 10));
     if(Array.isArray(value)) this.v = value;
   }
@@ -10,7 +14,7 @@ export default class Vector {
     return this.v;
   }
 
-  set value(newValue: number[] | number[][]) {
+  set value(newValue: number[]) {
     this.v = newValue;
   }
 
