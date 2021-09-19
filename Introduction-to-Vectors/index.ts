@@ -1,3 +1,4 @@
+import Vector from '../Vector';
 
 // column vector
 const v1: number[] = [...new Array(2)].map(() => Math.floor(Math.random()*10));
@@ -34,3 +35,17 @@ console.log('vector: ', vector);
 }
 
 scalarMultiplication(v1, scalar);
+
+const v5 = new Vector(2);
+const v6 = new Vector(2);
+
+// linear combination (cv + dw = [cv1+dw1, cv2+dw2])
+const v7 = v5.scalarMultiplication(3).addVector(v6.scalarMultiplication(4)); 
+console.log("v7", v7);
+
+// Linear Equations
+
+// x - 2y = 1
+// 3x + 2y = 11
+
+const v8 = new Vector([]);
