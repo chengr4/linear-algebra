@@ -1,7 +1,7 @@
-class Vector {
+export default class Vector {
   private v: number[];
 
-  constructor(value: number) {
+  constructor(value?: number) {
     this.v = [...new Array(value)].map(() => Math.floor(Math.random() * 10));
   }
 
@@ -9,36 +9,36 @@ class Vector {
     return this.v;
   }
 
-  printVector() {
-    console.log("my vector", this.v);
+  set value(newValue: number[]) {
+    this.v = newValue;
   }
 
-  addVector(...vectors: number[][]) {
+  printVector() {
+    console.log("my vector: ", this.value);
+  }
+
+  addVector(...vectors: Vector[]): Vector {
     console.log("##Add Vectors##");
     this.printVector();
 
-    for (const index in vectors) {
-      if (this.v.length !== vectors[index].length)
+    for (const vector of vectors) {
+      if (this.v.length !== vector.value.length)
         throw "One fo vectors has different length from the others";
-      console.log("add vector: ", vectors[index]);
+      console.log("add vector: ", vector.value);
+      this.value = vector.value.map((value, index) => value + this.value[index]);
+
     }
-
-    // sum expect the first vector itself
-    const OthersSum = vectors.reduce((preVector, currentVector) => {
-      return preVector.map((value, index) => value + currentVector[index]);
-    });
-
-    const finalSum = this.v.map((value, index) => value + OthersSum[index]);
-    console.log("Sum", finalSum);
-
-    return finalSum;
+    console.log('Sum', this.value);
+    
+    return this;
   }
 
-  scalarMultiplication(scalar: number) {
+  scalarMultiplication(scalar: number): Vector {
     this.printVector();
 
-    const result = this.v.map((value) => value * scalar);
-    console.log("Multiplicated vector ", result);
+    const result = new Vector();
+    result.value = this.v.map((value) => value * scalar);
+    console.log(`Multiplicated vector * ${scalar}`, result.value);
 
     return result;
   }
