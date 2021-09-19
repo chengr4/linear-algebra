@@ -48,4 +48,3 @@ console.log("v7", v7);
 // x - 2y = 1
 // 3x + 2y = 11
 
-const v8 = new Vector([]);
