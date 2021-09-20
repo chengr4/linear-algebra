@@ -1,4 +1,5 @@
 import Vector from '../Vector';
+import TwoDimensionalVector from '../TwoDimensionalVector';
 
 // column vector
 const v1: number[] = [...new Array(2)].map(() => Math.floor(Math.random()*10));
@@ -44,7 +45,15 @@ const v7 = v5.scalarMultiplication(3).addVector(v6.scalarMultiplication(4));
 console.log("v7", v7);
 
 // Linear Equations
-
 // x - 2y = 1
 // 3x + 2y = 11
+const v8 = [[1, -2], 
+            [3, 2]]; // v8 is a matrix
+const v9 = ['x', 'y'];
+const v10 = [1, 11];
 
+function colPicture(x, y) {
+  const v11 = [1, 11];
+  const v12 = [1, 3].map(value => value * x);
+  const v13 = [3, 2].map(value => value * y);
+}

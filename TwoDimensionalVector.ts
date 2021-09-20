@@ -1,4 +1,8 @@
-class TwoDimensionalVector {
+/**
+ * Also not use
+ */
+
+export default class TwoDimensionalVector {
   private v: number[][];
 
   constructor(value: number[][]) {
