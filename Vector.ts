@@ -6,6 +6,7 @@ export default class Vector {
   private v: number[];
 
   constructor(value?: number | number[]) {
+    this.v = [];
     if(typeof value === 'number') this.v = [...new Array(value)].map(() => Math.floor(Math.random() * 10));
     if(Array.isArray(value)) this.v = value;
   }
