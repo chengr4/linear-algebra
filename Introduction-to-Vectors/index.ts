@@ -1,5 +1,6 @@
 import Vector from "../Vector";
-import { twoUnknowns } from "../bruteForce";
+import { twoUnknowns, solveColPicture } from "../bruteForce";
+import { addVector } from "../cal";
 // column vector
 const v1: number[] = [...new Array(2)].map(() =>
   Math.floor(Math.random() * 10)
@@ -13,20 +14,6 @@ const v3: number[] = [...new Array(2)].map(() =>
 const v4: number[] = [...new Array(2)].map(() =>
   Math.floor(Math.random() * 10)
 );
-
-function addVector(...vectors: number[][]) {
-  // print each vector
-  for (const index in vectors) {
-    console.log(`vector${index}: `, vectors[index]);
-  }
-
-  const sum = vectors.reduce((preVector, currentVector) => {
-    return preVector.map((value, index) => value + currentVector[index]);
-  });
-  console.log("sum", sum);
-
-  return sum;
-}
 
 addVector(v1, v2, v3, v4);
 
@@ -53,9 +40,11 @@ console.log("v7", v7);
 // Linear Equations
 // x - 2y = 1
 // 3x + 2y = 11
-const f1 = (x: number, y: number) => (x - 2 * y)===1;
-const f2 = (x: number, y: number) => (3 * x + 2 * y)===11;
-twoUnknowns(f1, f2);
+const f1 = (x: number, y: number) => (x - 2 * y) === 1;
+const f2 = (x: number, y: number) => (3 * x + 2 * y) === 11;
+twoUnknowns(f1, f2); // x: 3, y: 1
+
+// v8 + v9 = v10
 const v8 = [
   [1, -2],
   [3, 2],
@@ -63,8 +52,14 @@ const v8 = [
 const v9 = ["x", "y"];
 const v10 = [1, 11];
 
-// function colPicture(x, y) {
-//   const v11 = [1, 11];
-//   const v12 = [1, 3].map((value) => value * x);
-//   const v13 = [3, 2].map((value) => value * y);
-// }
+function colPicture(x: number, y: number) {
+  const v11 = [1, 3].map((value) => value * x);
+  const v12 = [-2, 2].map((value) => value * y);
+  const v13 = addVector(v11, v12);
+  for (const i in v13) {
+    if (v13[i] !== v10[i]) return false;
+  }
+  return true;
+}
+
+solveColPicture(colPicture);
