@@ -13,10 +13,21 @@ export function twoUnknowns(f1: Function, f2: Function) {
   return console.log("Answer no found");
 }
 
-export function solveColPicture(f: Function) {
-  for (let i = -1000; i < 1000; i++) {
-    for (let j = -1000; j < 1000; j++) {
+export function solve2DColPicture(f: Function) {
+  for (let i = -100; i < 100; i++) {
+    for (let j = -100; j < 100; j++) {
       if(f(i, j)) return console.log(`x: ${i}, y: ${j} `);
+    }
+  }
+  return console.log("Answer no found");
+}
+
+export function solve3DColPicture(f: Function) {
+  for (let i = -100; i < 100; i++) {
+    for (let j = -100; j < 100; j++) {
+      for(let k = -100; k< 100; k++) {
+        if(f(i, j, k)) return console.log(`x: ${i}, y: ${j}, z:${k}`);
+      }
     }
   }
   return console.log("Answer no found");
