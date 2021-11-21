@@ -23,10 +23,10 @@ export function solve2DColPicture(f: Function) {
 }
 
 export function solve3DColPicture(f: Function) {
-  for (let i = -100; i < 100; i++) {
-    for (let j = -100; j < 100; j++) {
-      for(let k = -100; k< 100; k++) {
-        if(f(i, j, k)) return console.log(`x: ${i}, y: ${j}, z:${k}`);
+  for (let i = -10; i < 10; i++) {
+    for (let j = -10; j < 10; j++) {
+      for(let k = -10; k< 10; k++) {
+        if(f(i, j, k)) return console.log(`x: ${i}, y: ${j}, z: ${k}`);
       }
     }
   }

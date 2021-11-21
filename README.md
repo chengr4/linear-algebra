@@ -8,10 +8,6 @@ Run:
 ts-node <file>
 ```
 
-## Next Topic
-
-1. 1B 7:00
-
 ## Contents
 
 + Introduction to Vectors
