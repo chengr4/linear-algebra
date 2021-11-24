@@ -6,6 +6,7 @@ Run:
 
 ```
 ts-node <file>
+go run <name of the file>
 ```
 
 ## Contents
