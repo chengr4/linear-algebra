@@ -4,6 +4,9 @@
 
 - Row picture: different three planes (換值整體包刮核心大改)
 - Col picture: The same three col vectors (換值核心不變)
+- 空間中三向量若不在同一平面上，必能線性組合出空間任一向量
+- In order ro solve the unknowns, **pivots** should not be zero
+- rows can be exchanged
 
 ## References
 

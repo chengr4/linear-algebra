@@ -90,3 +90,24 @@ function colPictureV14(x: number, y: number, z: number) {
 }
 
 solve3DColPicture(colPictureV14);
+
+/* Gaussian Elimination
+2x + 4y - 2z = 2 (pivot = 2x)
+4x + 9y - 3z = 8
+-2x - 3y + 7z = 10
+
+2x + 4y - 2z = 2
+      y +  z = 4 (x * -2) (pivot = y)
+      y + 5z = 12 (x * 1)
+
+2x + 4y - 2z = 2
+      y +  z = 4 
+          4z = 8 (y * -1) (pivot = 4z)
+
+pivots 有意義
+
+Then do backward substitution, we will get
+z = 2, y = 2, x = -1
+*/
+
+
