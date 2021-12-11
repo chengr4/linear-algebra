@@ -9,6 +9,11 @@ ts-node <file>
 go run <name of the file>
 ```
 
+## Next step
+
+1. finish ref 5 matrix part + famaliar Golang insterface, type...
+2. 2a lecture
+
 ## Contents
 
 + Introduction to Vectors
@@ -39,3 +44,4 @@ go run <name of the file>
 2. [linear-algebra](https://github.com/guokaide/linear-algebra)
 3. [陳鍾誠教授; 求解方程式](https://ccckmit.gitbooks.io/rlab/content/solveEquation.html)
 4. https://pkg.go.dev/gonum.org/v1/gonum/mat
+5. https://medium.com/wireless-registry-engineering/gonum-tutorial-linear-algebra-in-go-21ef136fc2d7
