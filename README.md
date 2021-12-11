@@ -38,3 +38,4 @@ go run <name of the file>
 1. [【10120趙啟超教授：線性代數】](https://www.youtube.com/playlist?list=PLS0SUwlYe8cwxscGGxCUqQ78_AMJHQJ5u)
 2. [linear-algebra](https://github.com/guokaide/linear-algebra)
 3. [陳鍾誠教授; 求解方程式](https://ccckmit.gitbooks.io/rlab/content/solveEquation.html)
+4. https://pkg.go.dev/gonum.org/v1/gonum/mat
