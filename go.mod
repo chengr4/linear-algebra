@@ -1,4 +1,4 @@
-module linear.algebra
+module github.com/chengr4/linear-algebra
 
 go 1.17
 
