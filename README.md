@@ -1,4 +1,4 @@
-# Linear Algebra Note
+# Linear Algebra Notes
 
 線性代數筆記
 
@@ -8,11 +8,6 @@ Run:
 ts-node <file>
 go run <name of the file>
 ```
-
-## Next step
-
-1. finish ref 5 matrix part + famaliar Golang insterface, type...
-2. 2a lecture
 
 ## Contents
 
@@ -36,9 +31,8 @@ go run <name of the file>
 + Linear Programming
 + 博弈
 + 經濟
-+ ....
 
-## Reference
+## References
 
 1. [【10120趙啟超教授：線性代數】](https://www.youtube.com/playlist?list=PLS0SUwlYe8cwxscGGxCUqQ78_AMJHQJ5u)
 2. [linear-algebra](https://github.com/guokaide/linear-algebra)

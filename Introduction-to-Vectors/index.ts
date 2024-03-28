@@ -1,5 +1,5 @@
 import Vector from "../Vector";
-import { twoUnknowns, solve2DColPicture, solve3DColPicture } from "../bruteForce";
+import { twoUnknowns, solve2DColPicture, solve3DColPicture } from "../pkg/bruteForce/bruteForce";
 import { addVector } from "../cal";
 // column vector
 const v1: number[] = [...new Array(2)].map(() =>

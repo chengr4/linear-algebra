@@ -1,6 +1,6 @@
 module github.com/chengr4/linear-algebra
 
-go 1.17
+go 1.20
 
 require (
 	github.com/ajstarks/svgo v0.0.0-20211024235047-1546f124cd8b // indirect
