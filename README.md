@@ -9,6 +9,10 @@ ts-node <file>
 go run <name of the file>
 ```
 
+## Terminology
+
+- Linear combination (線性組合): `w = c1v1 + c2v2 + ... + cnvn`
+
 ## Contents
 
 + Introduction to Vectors
@@ -34,7 +38,7 @@ go run <name of the file>
 
 ## References
 
-1. [【10120趙啟超教授：線性代數】](https://www.youtube.com/playlist?list=PLS0SUwlYe8cwxscGGxCUqQ78_AMJHQJ5u)
+1. [線性代數筆記](https://ocw.nthu.edu.tw/ocw/index.php?page=course&cid=89)
 2. [linear-algebra](https://github.com/guokaide/linear-algebra)
 3. [陳鍾誠教授; 求解方程式](https://ccckmit.gitbooks.io/rlab/content/solveEquation.html)
 4. https://pkg.go.dev/gonum.org/v1/gonum/mat

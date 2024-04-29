@@ -1,0 +1,90 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsfonts, amssymb, amsmath}
+\usepackage{fullpage}
+\usepackage{parskip} % skip a line instead of indenting
+\usepackage{amsthm}
+\usepackage{xcolor}
+
+\newtheorem*{rem}{Remark}
+
+\title{Introduction to Vectors}
+\author{R4 Cheng}
+\date{\today}
+
+\newcommand{\remark}[1]{
+  \begin{rem}
+    \color{cyan}
+    #1
+  \end{rem}
+}
+
+\begin{document}
+\maketitle
+
+$ A \underline{x} = \underline{b} $
+
+\begin{itemize}
+  \item $A$ is a matrix
+  \item $\underline{x}$ is a vector
+  \item $\underline{b}$ is an another vector
+\end{itemize}
+
+\remark{If the three column vectors do not lie in the same plain, we can solve $A\underline{x}=\underline{b}$ for every $\underline{b}$}
+
+\subsection*{Guassian Elimination}
+
+\begin{align}
+  2x + 4y - 2z &= 2 \quad \text{2 is pivot} \\
+  4x + 9y - 3z &= 8 \quad \text{$-2 \times (1)$} \\
+  -2x - 3y + 7z &= 10 \quad \text{$+ (1)$}
+\end{align}
+$\Rightarrow$
+\begin{align}
+  2x + 4y - 2z &= 2 \\
+  y + z &= 4 \\
+  y + 5z &= 12
+\end{align}
+$\Rightarrow$
+\begin{align}
+  2x + 4y - 2z &= 2 \\
+  y + z &= 4 \\
+  4z &= 8
+\end{align}
+
+pivots: 2, 1, 4 (They are meaningful) \\
+Do backward substitution to get: $z = 2, y = 2, x = -1$
+
+\[
+\begin{bmatrix}
+  \boxed{2} & 4 & -2 & \vdots & 2 \\
+  4 & 9 & -3 & \vdots & 8 \\
+  -2 & -3 & 7 & \vdots & 10
+\end{bmatrix}
+\]
+$\Rightarrow$
+\[
+\begin{bmatrix}
+  2 & 4 & -2 & \vdots & 2 \\
+  0 & \boxed{1} & 1 & \vdots & 4 \\
+  0 & 1 & 5 & \vdots & 12
+\end{bmatrix}
+\]
+$\Rightarrow$
+\[
+\begin{bmatrix}
+  2 & 4 & -2 & \vdots & 2 \\
+  0 & 1 & 1 & \vdots & 4 \\
+  0 & 0 & \boxed{4} & \vdots & 8
+\end{bmatrix}
+\]
+
+In general,
+
+$[A \vdots b] \Rightarrow [\bigsqcup \vdots \underline{c}]$
+
+\remark{$\bigsqcup$ means upper-triangualr matrix}
+\remark{In order to solve the unknowns, pivots cannot be 0}
+
+
+
+\end{document}
