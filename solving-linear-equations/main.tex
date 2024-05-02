@@ -11,7 +11,7 @@
 \author{R4 Cheng}
 \date{\today}
 
-\newcommand{\remark}[1]{
+\newcommand{\Remark}[1]{
   \begin{rem}
     \color{cyan}
     #1
@@ -95,10 +95,132 @@ $AB \neq BA$ (Commutative law does not hold)
 
 $C(A+B) = CA + CB$ or $(A+B)C = AC + BC$ (Distributive laws hold)
 
+\Remark{We can change Guassian Elimination to Matrix multiplication}
+
+\subsection*{Identity Matrix}
+The identity matrix is a square matrix with ones on the main diagonal and zeros elsewhere. 
+It is denoted by $I$ or $I_n$ for an $n \times n$ matrix.
+$AI = IA = A$, for any $n \times n$ matrix $A$.
+
+\[
+I = \begin{bmatrix}
+1 & 0 & \cdots & 0 \\
+0 & 1 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & 1
+\end{bmatrix}
+\]
 
 
+\subsection*{Inverse Matrix}
+The inverse of a square matrix $A$, denoted as $A^{-1}$, is a matrix such that $AA^{-1} = A^{-1}A = I$, where $I$ is the identity matrix. The inverse matrix can be found using the formula:
 
+\[
+A^{-1} = \frac{1}{{\text{det}(A)}} \cdot \text{adj}(A)
+\]
 
+where $\text{det}(A)$ is the determinant of matrix $A$ and $\text{adj}(A)$ is the adjugate of matrix $A$.
 
+For example, to find the inverse of a $2 \times 2$ matrix:
+
+\[
+A = \begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
+\]
+
+the inverse matrix is given by:
+
+\[
+A^{-1} = \frac{1}{{ad - bc}} \cdot \begin{bmatrix}
+d & -b \\
+-c & a
+\end{bmatrix}
+\]
+
+To find the inverse of a $3 \times 3$ matrix, you can use the formula:
+
+\[
+A^{-1} = \frac{1}{{\text{det}(A)}} \cdot \text{adj}(A)
+\]
+
+where $\text{adj}(A)$ is the adjugate of matrix $A$. The adjugate of a $3 \times 3$ matrix is given by:
+
+\[
+\text{adj}(A) = \begin{bmatrix}
+A_{11} & A_{21} & A_{31} \\
+A_{12} & A_{22} & A_{32} \\
+A_{13} & A_{23} & A_{33}
+\end{bmatrix}
+\]
+
+where $A_{ij}$ is the cofactor of element $a_{ij}$ in matrix $A$.
+
+Note that not all matrices have an inverse. A matrix is invertible if and only if its determinant is non-zero.
+
+\subsubsection*{Attributes}
+
+\begin{itemize}
+  \item It is unique.
+  \item The inverse of $A^{-1}$ is $A$ itself.
+\end{itemize}
+
+\hrulefill
+
+\textbf{Claim.} Suppose A is invertible. Then its inverse is unique.
+
+\textbf{Proof.} Suppose $B$ and $C$ are both inverses of $A$.
+Then $B = BI = B(AC) = (BA)C = IC = C$.
+
+\Remark{left inverse = right inverse = inverse}
+
+\textbf{Claim.} The inverse of $A^{-1}$ is $A$ itself.
+
+\textbf{Proof.} $AA^{-1} = I$ and $A^{-1}A = I$.
+
+\textbf{Claim.} If $A$ is invertible, then the one and only solution to $A\underline{x} = \underline{b}$ is $\underline{x} = A^{-1}\underline{b}$.
+
+\textbf{Proof.} $A\underline{x} = \underline{b} \Rightarrow A^{-1}A\underline{x} = A^{-1}\underline{b} \Rightarrow \underline{x} = A^{-1}\underline{b}$.
+
+\textbf{Claim.} Suppose there is a nonzero solution $\underline{x}$ to $A\underline{x} = \underline{0}$ (homogeneous equation).
+Then $A$ is not invertible.
+
+\textbf{Proof.} If $A$ is invertible, then $A^{-1}$ exists.
+Then $A^{-1}A\underline{x} = A^{-1}\underline{0} \Rightarrow \underline{x} = \underline{0}$.
+
+\textbf{Claim.} A diagonal matrix has an inverse provided no diagonal entries are zero.
+
+\textbf{Proof.} \\
+If
+
+\[
+A = \begin{bmatrix}
+  d_1 & 0 & \cdots & 0 \\
+  0 & d_2 & \cdots & 0 \\
+  \vdots & \vdots & \ddots & \vdots \\
+  0 & 0 & \cdots & d_n
+\end{bmatrix}
+\]
+
+then
+
+\[
+A^{-1} = \begin{bmatrix}
+  \frac{1}{d_1} & 0 & \cdots & 0 \\
+  0 & \frac{1}{d_2} & \cdots & 0 \\
+  \vdots & \vdots & \ddots & \vdots \\
+  0 & 0 & \cdots & \frac{1}{d_n}
+\end{bmatrix}
+\]
+
+\textbf{Claim.} If $A$ and $B$ are invertible, then $AB$ is invertible and $(AB)^{-1} = B^{-1}A^{-1}$.
+
+\textbf{Proof.} 
+
+$(B^{-1}A^{-1})(AB) = B^{-1}(A^{-1}A)B = B^{-1}IB = I$ \\
+$(AB)(B^{-1}A^{-1}) = A(BB^{-1})A^{-1} = AIA^{-1} = I$
+
+\Remark{$(ABC)^{-1} = C^{-1}B^{-1}A^{-1}$}
 
 \end{document}
