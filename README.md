@@ -14,6 +14,7 @@ go run <name of the file>
 - Linear combination (線性組合): `w = c1v1 + c2v2 + ... + cnvn`
 - Elimination Matrix (消去矩陣):
 - Permutation Matrix (置換矩陣): e.g. `exhange rows 2 and 3, $P_{23}$`
+- Nonsingular matrix: it has a full set of `$n$` nonzero pivots.
 
 ## Contents
 
