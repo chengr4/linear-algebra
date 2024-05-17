@@ -344,5 +344,203 @@ TODO
 the $U$'s are upper-triangular with unit diagonal, and the $D$'s are diagonal matrices with no zeros on the diagonal,
 then $L_1 = L_2$, $D_1 = D_2$, and $U_1 = U_2$.
 
+\subsection*{One Square System $=$ Two Triangular Systems}
+
+Benifit: ????
+
+$A\underline{x} = \underline{b}$. Suppose elimination requires no row exchanges.
+
+$A = LU \Rightarrow LU\underline{x} = \underline{b} \Rightarrow U\underline{x} = L^{-1}\underline{b} = \underline{c}$
+
+We have $U\underline{x}$ where $L\underline{c} = \underline{b}$.
+
+\begin{enumerate}
+  \item Factor $A= LU$ by Gaussian eliminatio $\underline{c} = L^{-1}\underline{b}$.
+  \item Solve $\underline{c}$ from $L\underline{c} = \underline{b}$ (forward elimination) and then solve $U\underline{x} = \underline{c}$ (backward elimination)
+\end{enumerate}
+
+E.g.
+
+\[
+\begin{bmatrix}
+  2 & -1 & 0 \\
+  4 & -6 & 0 \\
+  -2 & 7 & 2
+\end{bmatrix}
+\begin{bmatrix}
+  x \\
+  y \\
+  z
+\end{bmatrix} = 
+\begin{bmatrix}
+  5 \\
+  -2 \\
+  9
+\end{bmatrix}
+\]
+$$A\underline{x} = \underline{b}$$
+$\Rightarrow$
+\[
+\begin{bmatrix}
+  2 & 1 & 1 \\
+  4 & -6 & 0 \\
+  -2 & 7 & 2
+\end{bmatrix} = 
+\begin{bmatrix}
+  1 & 0 & 0 \\
+  2 & 1 & 0 \\
+  -1 & -1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+  2 & 1 & 0 \\
+  0 & -8 & -2 \\
+  0 & 0 & 1
+\end{bmatrix}
+\]
+$$A = LU$$
+$\Rightarrow$
+\[
+\begin{bmatrix}
+  1 & 0 & 0 \\
+  2 & 1 & 0 \\
+  -1 & -1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+  c_1 \\
+  c_2 \\
+  c_3
+\end{bmatrix} =
+\begin{bmatrix}
+  5 \\
+  -2 \\
+  9
+\end{bmatrix}
+\]
+$$L\underline{c} = \underline{b}$$
+
+\[
+\therefore
+\underline{c} = 
+\begin{bmatrix}
+  c_1 \\
+  c_2 \\
+  c_3
+\end{bmatrix} = 
+\begin{bmatrix}
+  5 \\
+  -12 \\
+  9
+\end{bmatrix}
+\]
+\[
+  \begin{bmatrix}
+    2 & 1 & 1 \\
+    0 & -8 & -2 \\
+    0 & 0 & 1
+  \end{bmatrix}
+  \begin{bmatrix}
+    x \\
+    y \\
+    z
+  \end{bmatrix} =
+  \begin{bmatrix}
+    5 \\
+    -12 \\
+    9
+  \end{bmatrix}
+\]
+$$U\underline{x} = \underline{c}$$
+\[
+  \therefore
+  \underline{x} = 
+  \begin{bmatrix}
+    x \\
+    y \\
+    z
+  \end{bmatrix} = 
+  \begin{bmatrix}
+    1 \\
+    1 \\
+    2
+  \end{bmatrix}
+\]
+
+\subsection*{Complexity of Elimination}
+\subsubsection*{1.}
+Solve $A\underline{x} = \underline{b}$
+
+\[
+  A = 
+  \begin{bmatrix}
+    a_{11} & a_{12} & \hdots & a_{1n} \\
+    a_{21} & a_{22} & \hdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{n1} & a_{n2} & \hdots & a_{nn}
+  \end{bmatrix} = 
+  LU
+\]
+
+Gaussian Elimination:
+
+1st stage: $n(n-1) \approx n^2$ (\# multiplications and additions) \\
+2nd stage: $(n-1)^2$ \\
+3rd stage: $(n-2)^2$ \\
+$\vdots$ \\
+$n^2 + (n-1)^2 + \cdots + 1^2 = \frac{1}{3}n(n+\frac{1}{2})(n+1) \approx \frac{n^3}{3}$
+
+Solve $L\underline{c} = \underline{b}$
+
+\[
+  \begin{bmatrix}
+    1 & 0 & \hdots & 0 \\
+    val & 1 & \hdots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    val & val & \hdots & 1
+  \end{bmatrix}
+  \begin{bmatrix}
+    c_1 \\
+    c_2 \\
+    \vdots \\
+    c_n
+  \end{bmatrix} =
+  \begin{bmatrix}
+    b_1 \\
+    b_2 \\
+    \vdots \\
+    b_n
+  \end{bmatrix}
+\]
+
+$(n-1) + (n-2) + \cdots + 2 + 1 = \frac{n(n-1)}{2} \approx \frac{n^2}{2}$
+
+
+\Remark{$b_1$ needs to be multiplied $(n-1)$ times, $b_2$ needs to be multiplied $(n-2)$ times}
+
+Solve $U\underline{x} = \underline{c}$
+
+\[
+  \begin{bmatrix}
+    pivot_1 & val & \cdots & val \\
+    0 & p_2 & \cdots & val \\
+    \cdots & \cdots & \ddots & \cdots \\
+    0 & 0 & \cdots & p_n
+  \end{bmatrix}
+  \begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+  \end{bmatrix} =
+  \begin{bmatrix}
+    c_1 \\
+    c_2 \\
+    \vdots \\
+    c_n
+  \end{bmatrix}
+\]
+
+$1 + 2 + \hdots + n = \frac{n(n-1)}{2} \approx \frac{n^2}{2}$
+
+Total: $\# = \frac{n^3}{3} + \frac{n^2}{2} + \frac{n^2}{2} \approx \frac{n^3}{3}$
 
 \end{document}
