@@ -543,4 +543,49 @@ $1 + 2 + \hdots + n = \frac{n(n-1)}{2} \approx \frac{n^2}{2}$
 
 Total: $\# = \frac{n^3}{3} + \frac{n^2}{2} + \frac{n^2}{2} \approx \frac{n^3}{3}$
 
+\subsubsection*{2.}
+
+Compute $A^{-1}$
+
+Solve
+$
+A
+\begin{bmatrix}
+  \underline{x_1} & \underline{x_2} & \cdots & \underline{x_n} \\
+\end{bmatrix} = 
+\begin{bmatrix}
+  \underline{e_1} & \underline{e_2} & \cdots & \underline{e_n} \\
+\end{bmatrix}
+$
+
+where $\underline{e_i}$ is the $i$th column of the identity matrix.
+
+According Elimination $A = LU$, solve
+
+$
+L\underline{c_i} = \underline{e_i} = 
+\begin{bmatrix}
+  0 \\
+  \vdots \\
+  1 (ith) \\
+  \vdots \\
+  0
+\end{bmatrix}
+$
+
+$\because$ The non-zero variables are only from $c_i$ to $c_n$. \\
+$\therefore$ Need to solve (n - i + 1) variables $\Rightarrow$ complexity $\#$ is $\frac{(n-i+1)^2}{2}$
+
+Since $1 \leq i \leq n$, $\# = \frac{n^2}{2} + \frac{(n-1)^2}{2} + \cdots + \frac{1^2}{2}  \approx \frac{n^3}{6}$
+
+And solve $U\underline{x_i} = \underline{c_i} \# = \frac{n^2}{2}$
+
+Since $1 \leq i \leq n$, $\# = n \times \frac{n^2}{2} = \frac{n^3}{2}$
+
+Total: $\# = \frac{n^3}{3} + \frac{n^3}{6} + \frac{n^3}{2} = n^3$
+
+Compared with e.g. \# for $A^2$: $n^2 \cdot n = n^3$
+
+Conclusion: Use Gaussian Elimination is as good as computing $A^2$ (not complicated).
+
 \end{document}
