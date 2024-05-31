@@ -588,4 +588,127 @@ Compared with e.g. \# for $A^2$: $n^2 \cdot n = n^3$
 
 Conclusion: Use Gaussian Elimination is as good as computing $A^2$ (not complicated).
 
+\subsection*{Transpose and Permutation Matrices}
+
+$
+A = 
+\begin{bmatrix}
+  1 & 2 & 3 \\
+  4 & 5 & 6 \\
+  7 & 8 & 9
+\end{bmatrix}
+\Rightarrow
+A^T =
+\begin{bmatrix}
+  1 & 4 & 7 \\
+  2 & 5 & 8 \\
+  3 & 6 & 9
+\end{bmatrix}
+\Rightarrow
+A^T_{ij} = A_{ji}
+$
+
+\textbf{Claim.} $(A+B)^T = A^T + B^T$
+
+\textbf{Claim.} $(AB)^T = B^TA^T$
+
+\textbf{Proof.} TODO
+
+\Remark{$(ABC)^T = C^TB^TA^T$}
+
+\textbf{Claim.} $(A^-1)^T = (A^T)^{-1}$
+
+\textbf{Proof.} TODO
+
+\textbf{Claim.} $(A^-1)^T = (A^T)^{-1}$
+
+\textbf{Proof.} TODO
+
+\textbf{Def.} An $n \times n$ matrix A is \textit{symmetric} if $A^T = A$.
+
+\Remark{$A_{ij} = A_{ji}$, if $A$ is symmetric}
+
+$
+A = A^T = 
+\begin{bmatrix}
+  1 & 2 \\
+  2 & 5 \\
+\end{bmatrix}
+D = D^T = 
+\begin{bmatrix}
+  1 & 0 \\
+  0 & 5 \\
+\end{bmatrix}
+$
+
+\textbf{Claim.} Given any matrix $R(n\times m)$, $R^TR$ and $RR^T$ are symmetric.
+
+\textbf{Proof.} $(R^TR)^T = R^T(R^T)^T = R^TR$
+
+\textbf{Claim.} If a symmetric matrix if factored into $LDU$ with no row exchanges, then $U = L^T$.
+
+\textbf{Proof.} $A = LDU \Rightarrow A^T = U^TD^TL^T = U^TDL^T$. 
+Since $A$ is symmetric $A = LDU = A^T = U^TDL^T$. Recall that this Factorization is unique $\Rightarrow U = L^T$
+
+\subsubsection*{Permutation Matrices}
+
+A Permutation matrix has the rows of the identity $I$ in any order. 
+There are \textit{6} $3 \times 3$ Permutation matrices.
+
+\[
+  I = 
+  \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+  \end{bmatrix}
+  P_{21} = 
+  \begin{bmatrix}
+    0 & 1 & 0 \\
+    1 & 0 & 0 \\
+    0 & 0 & 1
+  \end{bmatrix}
+  P_{31} =
+  \begin{bmatrix}
+    0 & 0 & 1 \\
+    0 & 1 & 0 \\
+    1 & 0 & 0
+  \end{bmatrix}
+  P_{32} =
+  \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 0 & 1 \\
+    0 & 1 & 0
+  \end{bmatrix}
+\]
+\[
+  P_{32}P_{21} = 
+  \begin{bmatrix}
+    0 & 1 & 0 \\
+    0 & 0 & 1 \\
+    1 & 0 & 0
+  \end{bmatrix}
+  P_{21}P_{32} =
+  \begin{bmatrix}
+    0 & 0 & 1 \\
+    1 & 0 & 0 \\
+    0 & 1 & 0
+  \end{bmatrix}
+\]
+$\therefore$ There are $n!$ Permutation matrices of order $n$.
+
+\textbf{Claim.} If $P$ is a Permutation matrix, then $P^T = P^{-1}$
+
+\textbf{Proof.} TODO
+
+Recall if no row exchanges are required, then $A = LU$.
+If row exchanges are needed, we then have $(\cdots P \cdots E)A = U$
+$\Rightarrow A = (\cdots E^{-1} \cdots P^{-1})U$
+
+If row exchanges are needed during elimination, we can do them in advance.
+The product $PA$ will put the rows in the right order so that no row exchanges are needed for $PA$.
+Hence $$PA = LU$$
+
+We can also hold row exchanges until after elemination, we then have $A = LPU$
+
 \end{document}
