@@ -1,0 +1,97 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsfonts, amssymb, amsmath}
+\usepackage{fullpage}
+\usepackage{parskip} % skip a line instead of indenting
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\newtheorem*{rem}{Remark}
+
+\title{Vector Spaces and Subspaces}
+\author{R4 Cheng}
+\date{\today}
+
+\newcommand{\Remark}[1]{
+  \begin{rem}
+    \color{cyan}
+    #1
+  \end{rem}
+}
+
+\begin{document}
+\maketitle
+
+$\mathbb{R}^n = $ all (column) vectors with n (real) components. \\
+$= \{ (v_1, v_2, \cdots, v_n): v_i \in \mathbb{R}, i = 1, 2, \cdots, n \}$
+
+\[
+\begin{bmatrix}
+  4 \\
+  \pi \\
+\end{bmatrix} \in \mathbb{R}^2,
+\quad
+(1, 1, 0, 1, 1) \in \mathbb{R}^5
+\]
+\[
+\begin{tikzpicture}
+  % Draw x-axis
+  \draw[->] (-2, 0) -- (2, 0) node[right] {$x$};
+  % Draw y-axis
+  \draw[->] (0, -2) -- (0, 2) node[above] {$y$};
+  
+  % Draw vector v
+  \draw[->, red] (0, 0) -- (1, 1) node[midway, below right] {$\mathbf{v}$};
+  \draw[->, pink] (0, 0) -- (3, 3) node[midway, above right] {$\mathbf{3v}$};
+  
+  % Draw vector w
+  \draw[->, blue] (0, 0) -- (1, 2) node[midway, above left] {$\mathbf{w}$};
+  
+  % Draw vector v + vector w
+  \draw[->, purple] (0, 0) -- (2, 3) node[above right] {$\mathbf{v} + \mathbf{w}$};
+\end{tikzpicture}
+\]
+
+\subsubsection*{Vector Space $V$}
+
+$V$: a set of vectors
+\begin{enumerate}
+  \item Two operations:
+  \begin{itemize}
+    \item vector addition: $\underline{v}, \underline{w} \in V \Rightarrow \underline{v} + \underline{w} \in V$
+    \item scalar multiplication: $c \underline{v} \in V$
+  \end{itemize}
+  \item Eight rules:
+  \begin{enumerate}
+    \item $\underline{v} + \underline{w} = \underline{w} + \underline{v}$ (commutative)
+    \item $(\underline{v} + \underline{w}) + \underline{z} = \underline{v} + (\underline{w} + \underline{z})$ (associative)
+    \item There is a unique "zero vector" \underline{0} such that $\underline{v} + \underline{0} = \underline{v}$ for all $\underline{v} \in V$
+    \item For each $\underline{v}$, there is a unique vector $-\underline{v}$ such that $\underline{v} + (-\underline{v}) = \underline{0}$
+    \item $1 \times \underline{v} = \underline{v}$
+    \item $(c_1c_2)\underline{v} = c_1(c_2\underline{v})$
+    \item $c(\underline{v} + \underline{w}) = c\underline{v} + c\underline{w}$
+    \item $(c_1 + c_2)\underline{v} = c_1\underline{v} + c_2\underline{v}$
+  \end{enumerate}
+\end{enumerate}
+
+$\Rightarrow 0 \times \underline{v}  = \underline{0}$  (not 0) \\
+$\Rightarrow (-1)\underline{v} = -\underline{v}$
+
+Examples:
+
+\begin{itemize}
+  \item $\mathbb{R}^n$ is a vector space
+  \item $M =$ \{all real $2 \times 2$ matrices\} is a vector space
+  \item $F =$ \{all real functions $f(x)$ \} is a vector space
+  \item $z = \{ \underline{0} \}$ is a vector space
+\end{itemize}
+
+\subsubsection*{Subspaces}
+
+\textbf{Def.} A subset W of a vector space V is a \underline{subspaces} if W itself is a vector space.
+
+\textbf{Claim} Every subspace contains the zero vector.
+
+\textbf{Proof} $ 0 \times \underline{v} = \underline{0} \in W$
+
+\end{document}
