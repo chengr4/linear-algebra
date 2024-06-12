@@ -334,7 +334,7 @@ $SS =$ the set of all linear combinations of vectors in S
 
 We call $SS$ the "span" of $S$.
 
-Then $SS$ is a subspace of $V$, called the subspace ``spanne'' by $S$.
+Then $SS$ is a subspace of $V$, called the subspace ``spanned'' by $S$.
 
 E.g.
 
@@ -348,5 +348,47 @@ A =
 $
 
 $SS = $ the column space of $A = C(A)$
+
+\subsection*{Null Space of A}
+
+$$N(A) = \{\underline{x}: A\underline{x} = \underline{0}\}$$
+
+\Remark{related to the "rank"}
+
+\textbf{Claim} If $A$ is $m \times n$, then $N(A)$ is a subspace of $\mathbb{R}^n$.
+
+\textbf{Proof} TODO
+
+Example:
+$
+C = 
+\begin{bmatrix}
+  1 & 2 & 2 & 4 \\
+  3 & 8 & 6 & 16 \\
+\end{bmatrix} = [A \quad 2A]
+$ (Two equations in four unknowns)
+
+TODO
+
+\[
+  N(C) = { \underline{x}: \underline{x} = 
+    x_3
+    \begin{bmatrix}
+      -2 \\
+      0 \\
+      1 \\
+      0
+    \end{bmatrix} + 
+    x_4
+    \begin{bmatrix}
+      -2 \\
+      0 \\
+      1 \\
+      0
+    \end{bmatrix},\, x_3, x_4 \in \mathbb{R}
+  } 
+\]
+
+\Remark{Reduced Row Echelon form (RRE form) 1. Produce 0 above/below pivots 2. Produce 1 in pivots} 
 
 \end{document}
