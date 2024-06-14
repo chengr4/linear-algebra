@@ -15,6 +15,7 @@ go run <name of the file>
 - Elimination Matrix (消去矩陣):
 - Permutation Matrix (置換矩陣): e.g. `exhange rows 2 and 3, $P_{23}$`
 - Nonsingular matrix: it has a full set of `$n$` nonzero pivots.
+- 
 
 ## Contents
 
@@ -44,5 +45,4 @@ go run <name of the file>
 1. [線性代數筆記](https://ocw.nthu.edu.tw/ocw/index.php?page=course&cid=89)
 2. [linear-algebra](https://github.com/guokaide/linear-algebra)
 3. [陳鍾誠教授; 求解方程式](https://ccckmit.gitbooks.io/rlab/content/solveEquation.html)
-4. https://pkg.go.dev/gonum.org/v1/gonum/mat
-5. https://medium.com/wireless-registry-engineering/gonum-tutorial-linear-algebra-in-go-21ef136fc2d7
+4. [為何不同大小的方陣不能相乘？](https://hackmd.io/@sysprog/ByhWN5jeR?fbclid=IwZXh0bgNhZW0CMTEAAR1-y9umZdN2-KrakA3Uzbq4iPQTRZvjBYjvqOo_9hW9gCdWiyNvBSq59R8_aem_ZmFrZWR1bW15MTZieXRlcw#jouae)

@@ -349,7 +349,7 @@ $
 
 $SS = $ the column space of $A = C(A)$
 
-\subsection*{Null Space of A}
+\subsection*{Null Space of $A$}
 
 $$N(A) = \{\underline{x}: A\underline{x} = \underline{0}\}$$
 
@@ -371,7 +371,7 @@ $ (Two equations in four unknowns)
 TODO
 
 \[
-  N(C) = { \underline{x}: \underline{x} = 
+  N(C) = \{ \underline{x}: \underline{x} = 
     x_3
     \begin{bmatrix}
       -2 \\
@@ -386,9 +386,54 @@ TODO
       1 \\
       0
     \end{bmatrix},\, x_3, x_4 \in \mathbb{R}
-  } 
+  \} 
 \]
 
 \Remark{Reduced Row Echelon form (RRE form) 1. Produce 0 above/below pivots 2. Produce 1 in pivots} 
+
+Example:
+$
+A = 
+\begin{bmatrix}
+  1 & 1 & 2 & 3 \\
+  2 & 2 & 8 & 10 \\
+  3 & 3 & 10 & 13 \\
+\end{bmatrix}
+$
+
+TODO
+
+\[
+  N(A) = \{ \underline{x}: \underline{x} = 
+    x_2
+    \begin{bmatrix}
+      -1 \\
+      1 \\
+      0 \\
+      0
+    \end{bmatrix} + 
+    x_4
+    \begin{bmatrix}
+      -1 \\
+      0 \\
+      -1 \\
+      1
+    \end{bmatrix},\, x_2, x_4 \in \mathbb{R}
+  \} 
+\]
+
+Suppose $A$ is $m \times n$. If there are $r$ pivots ($r \leq m, n$),
+there are $(n - r)$ free variables. And there are $(n - r)$ special solutions.
+$N(A)$ consistss of all the linear combinations of these $(n-r)$ special solutions.
+
+\begin{center}
+  $N(A) =$ the subspace spanned by these $(n-r)$ special solutions.
+\end{center}
+
+\textbf{Def.} The \textcolor{red}{rank} of a matrix $A$ is the number of pivots.
+
+\Remark{All free columns are linear combinations of the pivot columns, and special solutions describe these combinations.}
+
+
 
 \end{document}
