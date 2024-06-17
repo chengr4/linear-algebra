@@ -434,6 +434,24 @@ $N(A)$ consistss of all the linear combinations of these $(n-r)$ special solutio
 
 \Remark{All free columns are linear combinations of the pivot columns, and special solutions describe these combinations.}
 
+\subsection*{Complete Solution to $A\underline{x} = \underline{b}$}
 
+\[ \underline{x} = \underline{x}_{particular} + \underline{x}_{nullspace} \]
+
+\textbf{Claim} If $A\underline{x}=\underline{b}$, 
+then the complete solution is $\underline{x} = \underline{x}_{particular} + \underline{x}_{nullspace}$, 
+where $\underline{x}_{particular}$ is a particular solution to $A\underline{x}=\underline{b}$, and $\underline{x}_{nullspace}$ is a general solution to $A\underline{x} = \underline{0}$.
+
+\textbf{Proof} 
+
+1. If $\underline{x} = \underline{x}_{particular} + \underline{x}_{nullspace}$, then 
+$A\underline{x} = A(\underline{x}_{particular} + \underline{x}_{nullspace}) = A\underline{x}_{particular} + A\underline{x}_{nullspace} = \underline{b} + \underline{0} = \underline{b}$
+
+$\therefore \underline{x}$ is a solution to $A\underline{x} = \underline{b}$
+
+2. If $\underline{x}$ is a solution to $A\underline{x} = \underline{b}$, then
+$A(\underline{x} - \underline{x}_p) = A\underline{x} - A\underline{x}_p = \underline{b} - \underline{b} = \underline{0}$
+
+$\therefore \underline{x} - \underline{x}_p = \underline{x}_n$ is a solution to $A\underline{x} = \underline{0} \Rightarrow \underline{x} = \underline{x}_p + \underline{x}_n$
 
 \end{document}
