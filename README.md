@@ -2,13 +2,6 @@
 
 線性代數筆記
 
-Run:
-
-```
-ts-node <file>
-go run <name of the file>
-```
-
 ## Terminology
 
 - Linear combination (線性組合): `w = c1v1 + c2v2 + ... + cnvn`
