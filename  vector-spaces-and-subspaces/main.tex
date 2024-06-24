@@ -424,7 +424,7 @@ TODO
 
 Suppose $A$ is $m \times n$. If there are $r$ pivots ($r \leq m, n$),
 there are $(n - r)$ free variables. And there are $(n - r)$ special solutions.
-$N(A)$ consistss of all the linear combinations of these $(n-r)$ special solutions.
+$N(A)$ consists of all the linear combinations of these $(n-r)$ special solutions.
 
 \begin{center}
   $N(A) =$ the subspace spanned by these $(n-r)$ special solutions.
@@ -453,5 +453,91 @@ $\therefore \underline{x}$ is a solution to $A\underline{x} = \underline{b}$
 $A(\underline{x} - \underline{x}_p) = A\underline{x} - A\underline{x}_p = \underline{b} - \underline{b} = \underline{0}$
 
 $\therefore \underline{x} - \underline{x}_p = \underline{x}_n$ is a solution to $A\underline{x} = \underline{0} \Rightarrow \underline{x} = \underline{x}_p + \underline{x}_n$
+
+\fbox{
+  \parbox{\linewidth}{
+    \textbf{Q.} Suppose $A$ is a square invertible matrix ($m = n = pivots$). What are $\underline{x}_p$ and $\underline{x}_n$?
+
+    \textbf{A.}
+
+    The only particular solution to $A\underline{x} = \underline{b}$ is $\underline{x}_p = A^{-1}\underline{b}$. (because it is invertible)
+
+    The only solution to $A\underline{x} = \underline{0}$ is $\underline{x}_n = \underline{0}$ (Inverse matrix's attribute).
+  }
+}
+
+\textbf{Example: Full Column Rank}
+
+TODO
+
+In general, if $r = n (m\geq n)$ (A has full column rank), 
+
+\[
+A = [Matrix]_{m \times n}\ 
+\Rightarrow 
+R = 
+\begin{bmatrix}
+  I \\
+  0
+\end{bmatrix}
+\]
+
+Therefore, if $A$ has full column rank $(r=n)$, then 
+\begin{enumerate}
+  \item All columns of $A$ are pivot columns
+  \item There are no free variables or no special solutions
+  \item $N(a) = {\underline{0}}$
+  \item If $A\underline{x} = \underline{b}$ is solvable, then the solution is unique.
+\end{enumerate}
+
+\textbf{Example: Full Row Rank}
+
+TODO
+
+In general, if $r = m (m\leq n)$ (A has full row rank), 
+
+\[A = [Matrix]_{m \times n}\ \Rightarrow R = [I \quad F] \]
+
+Therefore, if $A$ has full row rank $(r=m)$, then 
+\begin{enumerate}
+  \item All rows of $A$ are pivot columns and $R$ has no zero rows
+  \item $A\underline{x} = \underline{b}$ is solvable for all $\underline{b}$
+  \item $C(A) = \mathbb{R}^m$ ($C$: column space)
+  \item There are $n-r = n-m$ special solutions in $N(A)$
+\end{enumerate}
+
+\subsubsection*{Summary}
+
+Case 1: $r = m = n$ (A is invertible)
+
+$R = I \Rightarrow A\underline{x} = \underline{b}$ has 1 solution: $\underline{x} = A^{-1}\underline{b}$
+
+Case 2: $r = m < n$ (full row rank) ($A$: short and wide)
+
+$R = [I \quad F] \Rightarrow A\underline{x} = \underline{b}$ is solvable for all $\underline{b}$ and solutions are $\infty$.
+
+Case 3: $r = n < m$ (full column rank) ($A$: tall and thin)
+
+\[
+R = 
+\begin{bmatrix}
+  I \\
+  0
+\end{bmatrix}
+\]
+
+$A\underline{x} = \underline{b}$ has 0 or 1 solution.
+
+Case 4: $r < m,\, n$ (neither full row rank nor full column rank)
+
+\[
+R = 
+\begin{bmatrix}
+  I & F \\
+  0 & 0
+\end{bmatrix}
+\]
+
+$A\underline{x} = \underline{b}$ has 0 or $\infty$ solutions.
 
 \end{document}
