@@ -540,4 +540,216 @@ R =
 
 $A\underline{x} = \underline{b}$ has 0 or $\infty$ solutions.
 
+\section*{Independence, Basis, and Dimension}
+
+\subsection*{(Linearly) Independence}
+
+\textbf{Def.} If $x_1\underline{v_1} + x_2\underline{v_2} + \cdots + x_n\underline{v_n} = \underbar{0}$
+and only happens when $x_1 = x_2 = \cdots = x_n = 0$, 
+then $\underline{v_1}, \underline{v_2}, \cdots, \underline{v_n}$ are \underline{linearly independent}.
+Otherwise, they are \underline{linearly dependent}.
+
+\textbf{Examples}
+
+\[
+\begin{bmatrix}
+  1 \\
+  0
+\end{bmatrix},\,
+\begin{bmatrix}
+  0 \\
+  1
+\end{bmatrix}
+\]
+
+TODO
+
+They are linearly independent.
+
+\[
+\begin{bmatrix}
+  1 \\
+  2 \\
+  1 \\
+  0
+\end{bmatrix},\,
+\begin{bmatrix}
+  3 \\
+  4 \\
+  0 \\
+  1
+\end{bmatrix}
+\]
+
+TODO
+
+$\Rightarrow x_1 = x_2 = 0$
+
+$\therefore$ They are linearly independent.
+
+\Remark{These special solutions we found in the nullspace of a matrix are independent}
+
+\[
+\begin{bmatrix}
+  1 \\
+  2 \\
+  1 \\
+\end{bmatrix},\,
+\begin{bmatrix}
+  0 \\
+  1 \\
+  0 \\
+\end{bmatrix},\,
+\begin{bmatrix}
+  3 \\
+  5 \\
+  3 \\
+\end{bmatrix}
+\]
+
+Suppose 
+\[
+x_1
+\begin{bmatrix}
+  1 \\
+  2 \\
+  1 \\
+\end{bmatrix} +
+x_2
+\begin{bmatrix}
+  0 \\
+  1 \\
+  0 \\
+\end{bmatrix} +
+x_3
+\begin{bmatrix}
+  3 \\
+  5 \\
+  3 \\
+\end{bmatrix} =
+\begin{bmatrix}
+  0 \\
+  0 \\
+  0 \\
+\end{bmatrix}
+\Rightarrow
+\begin{bmatrix}
+  1 & 0 & 3 \\
+  2 & 1 & 5 \\
+  1 & 0 & 3 \\
+\end{bmatrix}
+\begin{bmatrix}
+  x_1 \\
+  x_2 \\
+  x_3 \\
+\end{bmatrix} =
+\begin{bmatrix}
+  0 \\
+  0 \\
+  0 \\
+\end{bmatrix}
+\]
+
+(Calculate the nullspace of the matrix)
+
+\[
+\begin{bmatrix}
+  1 & 0 & 3 \\
+  2 & 1 & 5 \\
+  1 & 0 & 3 \\
+\end{bmatrix}
+\Rightarrow
+\begin{bmatrix}
+  1 & 0 & 3 \\
+  0 & 1 & -1 \\
+  0 & 0 & 0 \\
+\end{bmatrix} = R
+\therefore 
+\underbar{x} = 
+x_3
+\begin{bmatrix}
+  -3 \\
+  1 \\
+  1 \\
+\end{bmatrix}
+\]
+
+We can have 
+
+\[
+  -3
+  \begin{bmatrix}
+    1 \\
+    2 \\
+    1 \\
+  \end{bmatrix} +
+  1
+  \begin{bmatrix}
+    0 \\
+    1 \\
+    0 \\
+  \end{bmatrix} +
+  1
+  \begin{bmatrix}
+    3 \\
+    5 \\
+    3 \\
+  \end{bmatrix} =
+  \begin{bmatrix}
+    0 \\
+    0 \\
+    0 \\
+  \end{bmatrix}
+\]
+
+$\therefore$ They are linearly dependent.
+
+In general, the columns of $A$ are linearly independent exactly when $rank = n$ (aka. full column rank).
+
+$
+R = 
+\begin{bmatrix}
+  I \\
+  0
+\end{bmatrix}
+$
+There are $n$ pivots and no free variables. Hence $N(A) = {\underline{0}}$
+
+\textbf{Claim} Any set of n vectors in $\mathbb{R}^m$  must be linearly dependent if $n>m$.
+
+\textbf{Proof} TODO
+
+\textbf{Def.} A set of vectors `spans' a vector space if there linear combinations fill the space.
+
+E.g. The column of a matrix span its column space.
+
+E.g.
+$
+\begin{bmatrix}
+  1 \\
+  0
+\end{bmatrix},\,
+\begin{bmatrix}
+  0 \\
+  1
+\end{bmatrix}
+$ span $\mathbb{R}^2$
+$
+\Rightarrow
+\begin{bmatrix}
+  a \\
+  b
+\end{bmatrix} = 
+a
+\begin{bmatrix}
+  1 \\
+  0
+\end{bmatrix} +
+b
+\begin{bmatrix}
+  0 \\
+  1
+\end{bmatrix}
+$
+
 \end{document}
