@@ -35,7 +35,7 @@
 
 ## References
 
-1. [線性代數筆記](https://ocw.nthu.edu.tw/ocw/index.php?page=course&cid=89)
+1. [線性代數 - 趙啟超 教授](https://ocw.nthu.edu.tw/ocw/index.php?page=course&cid=89)
 2. [linear-algebra](https://github.com/guokaide/linear-algebra)
 3. [陳鍾誠教授; 求解方程式](https://ccckmit.gitbooks.io/rlab/content/solveEquation.html)
 4. [為何不同大小的方陣不能相乘？](https://hackmd.io/@sysprog/ByhWN5jeR?fbclid=IwZXh0bgNhZW0CMTEAAR1-y9umZdN2-KrakA3Uzbq4iPQTRZvjBYjvqOo_9hW9gCdWiyNvBSq59R8_aem_ZmFrZWR1bW15MTZieXRlcw#jouae)

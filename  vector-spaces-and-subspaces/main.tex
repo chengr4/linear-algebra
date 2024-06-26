@@ -752,4 +752,165 @@ b
 \end{bmatrix}
 $
 
+\textbf{Def.} The \textcolor{orange!100}{row space} of an $m \times n$ matrix $A$ is the subspace of $\mathbb{R}^n$ spanned by the rows of $A$.
+
+The row space of $A$ is $C(A^T)$
+
+\subsection*{Basis}
+
+\textbf{Def.} A \textcolor{orange!100}{basis} for a vector space a sequence of vectors satisfying two properties:
+
+\begin{enumerate}
+  \item The basis vectors are linearly independent
+  \item The basis vectors span the vector space
+\end{enumerate}
+
+\textbf{Examples}
+
+$
+\begin{bmatrix}
+  1 \\
+  0
+\end{bmatrix}
+\begin{bmatrix}
+  0 \\
+  1
+\end{bmatrix}
+$ constitute a basis for $\mathbb{R}^2$
+
+$
+\begin{bmatrix}
+  1 \\
+  0 \\
+  0
+\end{bmatrix}
+\begin{bmatrix}
+  1 \\
+  1 \\
+  0
+\end{bmatrix}
+\begin{bmatrix}
+  1 \\
+  1 \\
+  1
+\end{bmatrix}
+$ Let 
+$
+A = 
+\begin{bmatrix}
+  1 & 1 & 1 \\
+  0 & 1 & 1 \\
+  0 & 0 & 1
+\end{bmatrix}
+\Rightarrow
+$ 3 pivot (no free variables) $\Rightarrow$ linearly independent.
+
+And $
+\begin{bmatrix}
+  1 & 1 & 1 \\
+  0 & 1 & 1 \\
+  0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+  x_1 \\
+  x_2 \\
+  x_3
+\end{bmatrix} = 
+\begin{bmatrix}
+  b_1 \\
+  b_2 \\
+  b_3
+\end{bmatrix}
+$ is always solvable for any $b_1, b_2, b_3 \Rightarrow$ 
+$
+\begin{bmatrix}
+  1 \\
+  0 \\
+  0
+\end{bmatrix}
+\begin{bmatrix}
+  1 \\
+  1 \\
+  0
+\end{bmatrix}
+\begin{bmatrix}
+  1 \\
+  1 \\
+  1
+\end{bmatrix}
+$ are a basis for $\mathbb{R}^3$
+
+\textbf{Claim} Any three linearly independent vectors in $\mathbb {R}^3$ form a basis for $\mathbb{R}^3$.
+
+\textbf{Proof} Assume $\underline{v_1}$, $\underline{v_2}$, $\underline{v_3}$ are linearly independent. $\Rightarrow A = [\underline{v_1} \quad \underline{v_2} \quad \underline{v_3}]$ 
+$\Rightarrow$ rank = 3 $\Rightarrow A$ is invertible.
+
+$A\underline{x} = \underline{b}$ is solvable for every \underline{b}. $\therefore C(A) = \mathbb{R}^3 \Rightarrow$
+$\underline{v_1}$, $\underline{v_2}$, $\underline{v_3}$ are a basis for $\mathbb{R}^3$
+
+\textbf{Claim} Any n linearly independent vectors in $\mathbb{R}^n$ are a basis for $\mathbb{R}^n$.
+
+\textbf{Claim} The vectors $\underline{v_1}, \underline{v_2}, \cdots, \underline{v_n}$ are a basis for $\mathbb{R}^n$ 
+exactly when they are the columns of an invertible matrix.
+
+\Remark{$\mathbb{R}^n$ has infinitely many different bases.}
+
+\textbf{Claim} There is \textcolor{orange!100}{one and only one} way to write any vector in a vector space as a linear combination of the basis vectors.
+
+\textbf{Proof} TODO
+
+\textbf{Example: Search for Basis}
+
+\[
+A = 
+\begin{bmatrix}
+  1 & 3 & 0 & 2 & -1 \\
+  0 & 0 & 1 & 4 & -3 \\
+  1 & 3 & 1 & 6 & -4 \\
+\end{bmatrix} \Rightarrow
+R = 
+\begin{bmatrix}
+  \boxed{1} & 3 & 0 & 2 & -1 \\
+  0 & 0 & \boxed{1} & 4 & -3 \\
+  0 & 0 & 0 & 0 & 0 \\
+\end{bmatrix}
+\]
+
+\textbf{Recall} free columns of $R/A$ are linear combinations of pivot columns of $R/A$.
+
+$\because$ pivot columns of $R/A$ are linearly independent ($A\underline{x} = \underline{0} \iff R\underline{x} = \underline{0}$),
+$\therefore$ Pivot columns of $R/A$ are a basis for $C(R)/C(A)$.
+
+$
+\Rightarrow
+\begin{bmatrix}
+  1 \\
+  0 \\
+  1 \\
+\end{bmatrix}
+$ and 
+$
+\begin{bmatrix}
+  0 \\
+  1 \\
+  1 \\
+\end{bmatrix}
+$ are a basis for $C(A)$, and
+$
+\begin{bmatrix}
+  1 \\
+  0 \\
+  0 \\
+\end{bmatrix}
+$ and 
+$
+\begin{bmatrix}
+  0 \\
+  1 \\
+  0 \\
+\end{bmatrix}
+$ are a basis for $C(R)$.
+
+\Remark{$C(A) \neq C(R)$}
+
 \end{document}
