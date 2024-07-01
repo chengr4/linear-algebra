@@ -913,4 +913,84 @@ $ are a basis for $C(R)$.
 
 \Remark{$C(A) \neq C(R)$}
 
+\subsection*{Dimension}
+
+\textbf{Claim} If $\underline{v_1}, \underline{v_2}, \cdots, \underline{v_n}$ and $\underline{w_1}, \underline{w_2}, \cdots, \underline{w_m}$ 
+are both bases for the same vector vector space, then the number of elements \textcolor{orange!100}{$m = n$}.
+
+\textbf{Proof} TODO
+
+\textbf{Def.} The \textcolor{orange!100}{dimension} of a vector space is the number of vectors in every basis.
+
+\textbf{Examples} $dim(\mathbb{R}^2) = 2 \Rightarrow dim(\mathbb{R}^n) = n$
+
+Q. What is the dimension of the column space of a matrix $A$?
+
+\[
+A = 
+\begin{bmatrix}
+  1 & 3 & 0 & 2 & -1 \\
+  0 & 0 & 1 & 4 & -3 \\
+  1 & 3 & 1 & 6 & -4 \\ 
+\end{bmatrix}
+\Rightarrow
+R = 
+\begin{bmatrix}
+  1 & 3 & 0 & 2 & -1 \\
+  0 & 0 & 1 & 4 & -3 \\
+  0 & 0 & 0 & 0 & 0 \\
+\end{bmatrix}
+\Rightarrow dim(C(A)) = dim(C(R)) = 2 = rank
+\]
+
+$M = $ the vector space of all $2 \times 2$ real matrices.
+A basis for $M$ is
+$
+\begin{bmatrix}
+  1 & 0 \\
+  0 & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+  0 & 1 \\
+  0 & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+  0 & 0 \\
+  1 & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+  0 & 0 \\
+  0 & 1 \\
+\end{bmatrix} 
+\Rightarrow dim(m) = 4
+\Rightarrow
+$
+Dim of the $n \times n$ real matrix space is $n^2$.
+
+\begin{itemize}
+  \item Dim of the subspace (Why subspace rahter than vector space?) of all $n \times n$ upper triangular matrices $ = n + (n-1) + (n-2) + \cdots + 1 = \frac{n(n+1)}{2}$
+  \item Dim of the subspace of all $n \times n$ diagonal matrices $ = n$
+  \item Dim of the subspace of all $n \times n$ symmetric matrices $ = \frac{n(n+1)}{2}$
+\end{itemize}
+
+Symmetric:
+$
+\begin{bmatrix}
+  \ddots & a_{ij} \\
+  a_{ji} & \ddots
+\end{bmatrix}
+a_{ij} = a_{ji}
+$
+
+\subsubsection*{Dimension of the Four Subspaces}
+
+\begin{itemize}
+  \item Dim of $C(A^T)$ (row space) = rank of $A$, A subspace of $\mathbb{R}^n$
+  \item Dim of $C(A)$ (col space) = rank of $A$, A subspace of $\mathbb{R}^m$
+  \item Dim of $N(A)$ (null space) = $n - rank$, A subspace of $\mathbb{R}^n$
+  \item Dim of $N(A^T)$ (left nullspace) = $m - rank$, A subspace of $\mathbb{R}^m$
+\end{itemize}
+
+\Remark{$N(A^T) = \{\underline{y}: A^T\underline{y} = \underline{0}\} = \{\underline{y}: y^TA = \underline{0}^T\}$}
+
 \end{document}
