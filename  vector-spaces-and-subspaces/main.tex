@@ -989,15 +989,231 @@ $
 a_{ij} = a_{ji}
 $
 
-\subsubsection*{Dimension of the Four Subspaces}
+\subsection*{Dimension of the Four Subspaces of $A$}
 
 \begin{itemize}
-  \item Dim of $C(A^T)$ (row space) = rank of $A$, A subspace of $\mathbb{R}^n$
-  \item Dim of $C(A)$ (col space) = rank of $A$, A subspace of $\mathbb{R}^m$
-  \item Dim of $N(A)$ (null space) = $n - rank$, A subspace of $\mathbb{R}^n$
-  \item Dim of $N(A^T)$ (left nullspace) = $m - rank$, A subspace of $\mathbb{R}^m$
+  \item Dim of $C(A^T)$ (row space) = rank of $A$, a subspace of $\mathbb{R}^n$
+  \item Dim of $C(A)$ (col space) = rank of $A$, a subspace of $\mathbb{R}^m$
+  \item Dim of $N(A)$ (null space) = $n - rank$, a subspace of $\mathbb{R}^n$
+  \item Dim of $N(A^T)$ (left nullspace) = $m - rank$, a subspace of $\mathbb{R}^m$
 \end{itemize}
 
 \Remark{$N(A^T) = \{\underline{y}: A^T\underline{y} = \underline{0}\} = \{\underline{y}: y^TA = \underline{0}^T\}$}
 
+$
+A = 
+\begin{bmatrix}
+  1 & 3 & 5 & 0 & 7 \\
+  0 & 0 & 0 & 1 & 2 \\
+  1 & 3 & 5 & 1 & 9 \\
+\end{bmatrix} \Rightarrow
+R = 
+\begin{bmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & -1 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  -1 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+  1 & 3 & 5 & 0 & 7 \\
+  0 & 0 & 0 & 1 & 2 \\
+  1 & 3 & 5 & 1 & 9 \\
+\end{bmatrix}
+$
+
+$ 
+= 
+\begin{bmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  -1 & -1 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+  1 & 3 & 5 & 0 & 7 \\
+  0 & 0 & 0 & 1 & 2 \\
+  1 & 3 & 5 & 1 & 9 \\
+\end{bmatrix}
+= 
+$
+\textcolor{orange!100}{$EA$}
+$
+=
+\begin{bmatrix}
+  \boxed{1} & 3 & 5 & 0 & 7 \\
+  0 & 0 & 0 & \boxed{1} & 2 \\
+  0 & 0 & 0 & 0 & 0 \\
+\end{bmatrix}
+$
+
+\subsubsection*{Dimension of Row Space}
+
+\textbf{Basis for $C(R^T)$:} $(1,3,5,0,7)$, $(0,0,0,1,2)$ (aka. pivot rows)
+
+\[dim(C(R^T)) = r = 2\]
+
+We can have $EA = R$ for an invertible matrix $E$. $\iff A = E^{-1}R$
+
+$\therefore$ Every row of $A$ is a linear combination of the rows of $R$.
+Also, every row of $R$ is a linear combination of the rows of $A$.
+
+$\therefore C(A^T) = C(R^T)$
+
+\[dim(C(R^T)) = dim(C(A^T)) = r = 2\]
+
+\subsubsection*{Dimension of Column Space}
+
+\textbf{Basis for $C(R)$:}
+
+$
+\begin{bmatrix}
+  1 \\
+  0 \\
+  0 \\
+\end{bmatrix},\,
+\begin{bmatrix}
+  0 \\
+  1 \\
+  0 \\
+\end{bmatrix}
+$ (aka. pivot columns of R)
+
+\textbf{Basis for $C(R)$:}
+
+$
+\begin{bmatrix}
+  1 \\
+  0 \\
+  1 \\
+\end{bmatrix},\,
+\begin{bmatrix}
+  0 \\
+  1 \\
+  1 \\
+\end{bmatrix}
+$ (aka. pivot columns of A)
+
+\[dim(C(R)) = dim(C(A)) =  r = 2\]
+
+\Remark{$rank(A) = rank(A^T) = r = 2$}
+
+\subsubsection*{Dimension of Null Space}
+
+\[\because A\underline{x} = \underline{0} \iff R\underline{x} = \underline{0}\]
+\[\therefore N(A) = N(R)\]
+
+$
+R =
+\begin{bmatrix}
+  \boxed{1} & 3 & 5 & 0 & 7 \\
+  0 & 0 & 0 & \boxed{1} & 2 \\
+  0 & 0 & 0 & 0 & 0 \\
+\end{bmatrix}
+$
+Basis for $N(R)/N(A)$:
+$
+\begin{bmatrix}
+  -3 \\
+  1 \\
+  0 \\
+  0 \\
+  0 \\
+\end{bmatrix},\,
+\begin{bmatrix}
+  -5 \\
+  0 \\
+  1 \\
+  0 \\
+  0 \\
+\end{bmatrix},\,
+\begin{bmatrix}
+  -7 \\
+  -2 \\
+  0 \\
+  1 \\
+  0 \\
+\end{bmatrix}
+$
+
+$\therefore dim(N(A)) = dim(N(R)) = 3 = n - r = n - rank(A)$
+
+\subsubsection*{Dimension of Left Nullspace}
+
+$\underline{y}^TR = \underline{0}^T \iff 
+(y_1, y_2, y_3)
+\begin{bmatrix}
+  1 & 3 & 5 & 0 & 7 \\
+  0 & 0 & 0 & 1 & 2 \\
+  0 & 0 & 0 & 0 & 0 \\
+\end{bmatrix} = 
+(0, 0, 0, 0, 0)
+$
+
+$\Rightarrow y_1(1,3,5,0,7) + y_2(0,0,0,1,2) = (0,0,0,0,0)$
+
+$\Rightarrow y_1 = 0,\, y_2 = 0,\, y_3 = $ any number
+
+$\therefore (y_1,\, y_2,\,, y_3) = y_3(0,0,1)$
+
+Basis for $N(R^T)$: $(0,0,1)$
+
+\[dim(N(R^T)) = 3 - 2 = 1\]
+
+In general,
+
+TODO
+
+\[dim(N(R^T)) = m - r\]
+
+For $N(A^T)$, since $A^T$ is $n \times m$, we know
+
+\[dim(N(A^T)) = m - rank(A^T) = m - rank(A) = m - r\]
+
+Recall $EA = R$ where $E$ is invertible.
+
+$ 
+\begin{bmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  -1 & -1 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+  1 & 3 & 5 & 0 & 7 \\
+  0 & 0 & 0 & 1 & 2 \\
+  1 & 3 & 5 & 1 & 9 \\
+\end{bmatrix}
+= 
+\begin{bmatrix}
+  \boxed{1} & 3 & 5 & 0 & 7 \\
+  0 & 0 & 0 & \boxed{1} & 2 \\
+  0 & 0 & 0 & 0 & 0 \\
+\end{bmatrix}
+$
+
+$
+\Rightarrow
+(-1, -1, -1)
+\begin{bmatrix}
+  1 & 3 & 5 & 0 & 7 \\
+  0 & 0 & 0 & 1 & 2 \\
+  1 & 3 & 5 & 1 & 9 \\
+\end{bmatrix} = (0,0,0,0,0)
+$
+
+Since $dim(N(A^T)) = m - r = 3 - 2 = 1 \Rightarrow$ 
+$\underline{y^T}A = \underline{0^T} \Rightarrow \underline{y} = y_1(-1,-1,1)$
+
+$(-1,-1,1)$ forms a basis for left nullspace $N(A^T)$
+
+In general,
+
+TODO
+
+Since $E$ is invertible, all rows of $E$ are linearly independent.
+$dim(N(A^T) = m - r)$
+
+$\therefore$ THe last $m - r$ rows of $E$ form a basis for $N(A^T)$.
 \end{document}
